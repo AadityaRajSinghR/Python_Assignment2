@@ -2,7 +2,7 @@
 Write a Python program that defines a base class named Shape with methods to calculate the area and perimeter. Then, implement subclasses such as Circle, Rectangle, and Triangle, each overriding the base class methods with their specific calculations. The program should demonstrate polymorphism by creating a list of different shape objects and calculating their areas and perimeters.
 """
 
-import math
+PI = 3.14
 
 # Base Class
 class Shape:
@@ -20,10 +20,10 @@ class Circle(Shape):
         self.radius = radius
 
     def area(self):
-        return math.pi * (self.radius ** 2)
+        return PI * (self.radius ** 2)
 
     def perimeter(self):
-        return 2 * math.pi * self.radius
+        return 2 * PI * self.radius
 
 # Subclass for Rectangle
 class Rectangle(Shape):
@@ -55,7 +55,7 @@ class Triangle(Shape):
         # Using Heron's formula
         s = (self.side_a + self.side_b + self.side_c) / 2
         #A = √s(s−a)(s−b)(s−c)
-        return math.sqrt(s * (s - self.side_a) * (s - self.side_b) * (s - self.side_c))
+        return (s * (s - self.side_a) * (s - self.side_b) * (s - self.side_c)) ** 0.5
     def perimeter(self):
         return self.side_a + self.side_b + self.side_c
 
